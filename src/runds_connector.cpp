@@ -110,8 +110,8 @@ int RundSConnector::open() {
         return 2;
     }
 
-    if (send_command("*RST\r\n") != 0) {
-        std::cerr << "eb200 reset failed" << std::endl;
+    if (send_command("*IDN?\r\n") != 0) {
+        std::cerr << "receiver communication failed" << std::endl;
         return 2;
     }
 
